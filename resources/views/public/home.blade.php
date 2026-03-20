@@ -391,7 +391,7 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
 </style>
 
-<section class="relative bg-white overflow-hidden" style="min-height: calc(100vh - 64px);">
+<section class="relative bg-white overflow-hidden" style="min-height: calc(100vh - 80px);">
 
     {{-- Subtle star on the hero background grid --}}
     <div class="absolute inset-0 pointer-events-none"
@@ -404,11 +404,11 @@
     <div class="absolute bottom-0 left-0 w-[520px] h-[520px] pointer-events-none"
          style="background: radial-gradient(ellipse at bottom left, rgba(16,185,129,0.09) 0%, transparent 60%);"></div>
 
-    <div class="max-w-[1160px] mx-auto px-6 w-full flex items-center" style="min-height: calc(100vh - 64px);">
-        <div class="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center py-20 w-full">
+    <div class="max-w-[1360px] mx-auto px-6 w-full flex items-center" style="min-height: calc(100vh - 80px);">
+        <div class="grid lg:grid-cols-[46fr_54fr] gap-12 xl:gap-16 items-center py-20 w-full">
 
             {{-- ── Left column ── --}}
-            <div class="flex flex-col">
+            <div class="flex flex-col min-w-0">
 
                 {{-- Badge --}}
                 <div class="hero-badge self-start mb-7"
@@ -515,7 +515,7 @@
                 <img src="{{ asset('images/hero-mockup.png') }}"
                      alt="Roddy Technologies Dashboard"
                      class="w-full h-auto relative z-10"
-                     style="filter: drop-shadow(0 32px 64px rgba(0,0,0,0.13));">
+                     style="filter: drop-shadow(0 40px 80px rgba(0,0,0,0.15));">
 
                 {{-- Floating card — Active Projects (top left) --}}
                 <div class="card-float glass-card absolute left-4 top-2 w-[192px] rounded-2xl p-4 border border-white/70 z-20"
@@ -571,8 +571,8 @@
      PRODUCT STRIP
 ════════════════════════════════════════════════════════ --}}
 {{-- Product logos/favicons will be made dynamic later --}}
-<section class="py-14 px-6 border-t border-gray-100" style="background:#f1f6fb;">
-    <div class="max-w-[1160px] mx-auto">
+<section class="py-14 px-6 border-t border-gray-100" style="background:#e8e8ed;">
+    <div class="max-w-[1360px] mx-auto">
 
         <div class="text-center mb-10">
             <p class="text-[18px] font-semibold uppercase tracking-[0.22em] text-blue-600">Platforms we own & operate</p>
@@ -646,7 +646,7 @@
     <div class="absolute bottom-0 right-0 w-[500px] h-[400px] pointer-events-none"
          style="background: radial-gradient(ellipse at bottom right, rgba(16,185,129,0.08) 0%, transparent 65%);"></div>
 
-    <div class="max-w-[1160px] mx-auto relative">
+    <div class="max-w-[1360px] mx-auto relative">
 
         {{-- Section header --}}
         <div class="text-center mb-16">
@@ -849,12 +849,12 @@
     .wcu-card:hover .wcu-icon-green { color: #059669; }
 </style>
 
-<section class="relative py-28 px-6 overflow-hidden" style="background:#f1f6fb;">
+<section class="relative py-28 px-6 overflow-hidden" style="background:#e8e8ed;">
 
     <div class="absolute pointer-events-none" style="top:-180px;left:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.05) 0%,transparent 68%);"></div>
     <div class="absolute pointer-events-none" style="bottom:-140px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,0.05) 0%,transparent 68%);"></div>
 
-    <div class="relative max-w-[1160px] mx-auto">
+    <div class="relative max-w-[1360px] mx-auto">
 
         <div class="text-center mb-[72px]">
             <span class="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] uppercase mb-5 px-3.5 py-1.5 rounded-full"
@@ -1154,7 +1154,7 @@
      Dark animated card: left = headline + CTA, right = live chat UI
      Messages appear in sequence via CSS animation-delay
 ════════════════════════════════════════════════════════ --}}
-<section class="py-20 px-6" style="background:#f1f6fb;">
+<section class="py-20 px-6" style="background:#e8e8ed;">
     <div class="max-w-[1100px] mx-auto">
         <div class="webdev-bg relative rounded-[28px] overflow-hidden"
              style="box-shadow: 0 32px 90px rgba(0,0,0,0.32), 0 8px 24px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.06);">

@@ -21,20 +21,20 @@
         .drawer-close-btn { animation: drawer-spin-close 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards; }
     </style>
 </head>
-<body class="antialiased bg-[#f9fafb] text-gray-900">
+<body class="antialiased bg-white text-gray-900">
 
 {{-- ═══ NAVBAR ═══ --}}
 <div x-data="{ menu: false, explore: false, support: false }" @keydown.escape.window="menu=false">
 
     {{-- Main nav bar --}}
-    <nav class="fixed top-0 left-0 right-0 z-50 h-16 flex items-center"
+    <nav class="fixed top-0 left-0 right-0 z-50 h-20 flex items-center"
          style="background: rgba(255,255,255,0.82); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(0,0,0,0.08);">
 
-        <div class="w-full max-w-[1160px] mx-auto px-6 flex items-center justify-between">
+        <div class="w-full max-w-[1360px] mx-auto px-8 flex items-center justify-between">
 
             {{-- Logo --}}
             <a href="{{ route('home') }}" class="flex items-center shrink-0">
-                <img src="{{ asset('images/rtg-logo.png') }}" alt="Roddy Technologies" class="h-9 w-auto">
+                <img src="{{ asset('images/rtg-logo.png') }}" alt="Roddy Technologies" class="h-11 w-auto">
             </a>
 
             {{-- Desktop links --}}
@@ -60,22 +60,22 @@
             x-transition:enter-end="opacity-100 translate-y-0"
             x-transition:leave="transition ease-in duration-100"
             x-transition:leave-end="opacity-0"
-            class="absolute top-full left-1/2 -translate-x-1/2 mt-[26px] w-52 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-black/10 p-1.5">
+            class="absolute top-full left-1/2 -translate-x-1/2 mt-[26px] w-64 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-black/10 p-1.5">
                         <a href="{{ route('blog.index') }}"     class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
                             <span class="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></span>
-                            <div><p class="text-[12.5px] font-medium text-gray-900">Blog</p><p class="text-[11px] text-gray-400">Insights & updates</p></div>
+                            <div><p class="text-[16px] font-medium text-gray-900">Blog</p><p class="text-[13px] text-gray-400">Insights & updates</p></div>
                         </a>
                         <a href="{{ route('products.index') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
                             <span class="w-7 h-7 rounded-lg bg-green-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg></span>
-                            <div><p class="text-[12.5px] font-medium text-gray-900">Products</p><p class="text-[11px] text-gray-400">Tools we've shipped</p></div>
+                            <div><p class="text-[16px] font-medium text-gray-900">Products</p><p class="text-[13px] text-gray-400">Tools we've shipped</p></div>
                         </a>
                         <a href="{{ route('pricing.index') }}"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
                             <span class="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg></span>
-                            <div><p class="text-[12.5px] font-medium text-gray-900">Pricing</p><p class="text-[11px] text-gray-400">Transparent rates</p></div>
+                            <div><p class="text-[16px] font-medium text-gray-900">Pricing</p><p class="text-[13px] text-gray-400">Transparent rates</p></div>
                         </a>
                         <a href="{{ route('store.index') }}"    class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
                             <span class="w-7 h-7 rounded-lg bg-green-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
-                            <div><p class="text-[12.5px] font-medium text-gray-900">Store</p><p class="text-[11px] text-gray-400">Ready-made solutions</p></div>
+                            <div><p class="text-[16px] font-medium text-gray-900">Store</p><p class="text-[13px] text-gray-400">Ready-made solutions</p></div>
                         </a>
                     </div>
                 </div>
@@ -89,23 +89,23 @@
                         </svg>
                     </button>
                     <div x-show="support" x-cloak
-                         x-transition:enter="transition ease-out duration-150"
-                         x-transition:enter-start="opacity-0 -translate-y-1"
-                         x-transition:enter-end="opacity-100 translate-y-0"
-                         x-transition:leave="transition ease-in duration-100"
-                         x-transition:leave-end="opacity-0"
-                         class="absolute top-full left-1/2 -translate-x-1/2 mt-[26px] w-52 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-black/10 p-1.5">
+                    x-transition:enter="transition ease-out duration-150"
+                    x-transition:enter-start="opacity-0 -translate-y-1"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-100"
+                    x-transition:leave-end="opacity-0"
+                    class="absolute top-full left-1/2 -translate-x-1/2 mt-[26px] w-64 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-black/10 p-1.5">
                         <a href="{{ route('support.kb') }}"        class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
                             <span class="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></span>
-                            <div><p class="text-[12.5px] font-medium text-gray-900">Knowledge Base</p><p class="text-[11px] text-gray-400">Docs & guides</p></div>
+                            <div><p class="text-[16px] font-medium text-gray-900">Knowledge Base</p><p class="text-[13px] text-gray-400">Docs & guides</p></div>
                         </a>
                         <a href="{{ route('support.tutorials') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
                             <span class="w-7 h-7 rounded-lg bg-green-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
-                            <div><p class="text-[12.5px] font-medium text-gray-900">Tutorials</p><p class="text-[11px] text-gray-400">Step-by-step videos</p></div>
+                            <div><p class="text-[16px] font-medium text-gray-900">Tutorials</p><p class="text-[13px] text-gray-400">Step-by-step videos</p></div>
                         </a>
                         <a href="{{ route('support.help') }}"      class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
                             <span class="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
-                            <div><p class="text-[12.5px] font-medium text-gray-900">Help Center</p><p class="text-[11px] text-gray-400">Common questions</p></div>
+                            <div><p class="text-[16px] font-medium text-gray-900">Help Center</p><p class="text-[13px] text-gray-400">Common questions</p></div>
                         </a>
                     </div>
                 </div>
@@ -117,13 +117,13 @@
             <div class="flex items-center gap-2">
                 @auth
                     <a href="{{ auth()->user()->isAdmin() ? route('admin.dashboard') : route('client.dashboard') }}"
-                       class="hidden lg:flex items-center gap-1.5 text-[13px] font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 px-3.5 py-2 rounded-[12px] transition-colors">
+                    class="hidden lg:flex items-center gap-1.5 text-[13px] font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 px-3.5 py-2 rounded-[12px] transition-colors">
                         Dashboard
                     </a>
                 @else
                     <div class="hidden lg:flex items-center gap-3">
                         <a href="{{ route('login') }}"
-                           class="flex items-center gap-1.5 text-[13px] font-medium text-gray-700 hover:text-gray-900 transition-colors">
+                        class="flex items-center gap-1.5 text-[13px] font-medium text-gray-700 hover:text-gray-900 transition-colors">
                             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none">
                                 <path d="M8 10V7a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <rect x="4" y="10" width="16" height="12" rx="3" fill="currentColor"/>
@@ -132,7 +132,7 @@
                             Login
                         </a>
                         <a href="{{ route('register') }}"
-                           class="inline-flex text-[13px] font-semibold text-white bg-gray-900 hover:bg-gray-700 px-4 py-2 rounded-[12px] transition-colors">
+                        class="inline-flex text-[13px] font-semibold text-white bg-gray-900 hover:bg-gray-700 px-4 py-2 rounded-[12px] transition-colors">
                             Sign up free
                         </a>
                     </div>
@@ -167,7 +167,7 @@
                                 <span class="text-base leading-none" x-text="lang.flag"></span>
                                 <div>
                                     <p class="text-[12.5px] font-semibold leading-tight" x-text="lang.label"></p>
-                                    <p class="text-[11px] text-gray-400 leading-tight" x-text="lang.native"></p>
+                                    <p class="text-[13px] text-gray-400 leading-tight" x-text="lang.native"></p>
                                 </div>
                                 <svg x-show="$store.lang.current.code === lang.code" class="w-3.5 h-3.5 text-blue-600 ml-auto shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
@@ -292,9 +292,9 @@
 </div>{{-- end x-data --}}
 
 {{-- ── PAGE CONTENT ── --}}
-<main class="pt-16">
+<main class="pt-20">
     @if(session('success'))
-        <div class="max-w-[1160px] mx-auto px-6 pt-4">
+        <div class="max-w-[1360px] mx-auto px-8 pt-4">
             <div class="flex items-center gap-3 px-4 py-3 rounded-xl border border-green-200 bg-green-50 text-green-700 text-sm">
                 <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                 {{ session('success') }}
@@ -305,14 +305,14 @@
 </main>
 
 {{-- ═══ FOOTER ═══ --}}
-<footer class="mt-24 border-t border-gray-100" style="background:#f1f6fb;">
+<footer class="mt-24 border-t border-gray-100" style="background:#e8e8ed;">
     <div class="max-w-[1160px] mx-auto px-6 py-16">
         <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
 
             {{-- Brand --}}
             <div class="md:col-span-2">
                 <a href="{{ route('home') }}" class="inline-flex mb-5">
-                    <img src="{{ asset('images/rtg-logo.png') }}" alt="Roddy Technologies" class="h-9 w-auto">
+                    <img src="{{ asset('images/rtg-logo.png') }}" alt="Roddy Technologies" class="h-11 w-auto">
                 </a>
                 <p class="text-sm text-gray-500 leading-relaxed max-w-xs">
                     Building premium digital products for businesses across Africa and beyond.
