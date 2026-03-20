@@ -398,11 +398,6 @@
          style="background-image: radial-gradient(circle, rgba(0,0,0,0.13) 1.5px, transparent 1.5px); background-size: 28px 28px;"></div>
 
     {{-- Ambient glow — blue top-right --}}
-    <div class="absolute top-0 right-0 w-[680px] h-[680px] pointer-events-none"
-         style="background: radial-gradient(ellipse at top right, rgba(37,99,235,0.10) 0%, transparent 60%);"></div>
-    {{-- Ambient glow — green bottom-left --}}
-    <div class="absolute bottom-0 left-0 w-[520px] h-[520px] pointer-events-none"
-         style="background: radial-gradient(ellipse at bottom left, rgba(16,185,129,0.09) 0%, transparent 60%);"></div>
 
     <div class="max-w-[1360px] mx-auto px-6 w-full flex items-center" style="min-height: calc(100vh - 80px);">
         <div class="grid lg:grid-cols-[46fr_54fr] gap-12 xl:gap-16 items-center py-20 w-full">
@@ -571,7 +566,7 @@
      PRODUCT STRIP
 ════════════════════════════════════════════════════════ --}}
 {{-- Product logos/favicons will be made dynamic later --}}
-<section class="py-14 px-6 border-t border-gray-100" style="background:#e8e8ed;">
+<section class="py-14 px-6 border-t border-gray-100" style="background:#f1f6fb;">
     <div class="max-w-[1360px] mx-auto">
 
         <div class="text-center mb-10">
@@ -640,11 +635,6 @@
 --}}
 <section class="relative py-28 px-6 overflow-hidden" style="background:#ffffff;">
 
-    {{-- Ambient orbs that the glass cards blur over --}}
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] pointer-events-none"
-         style="background: radial-gradient(ellipse at center top, rgba(37,99,235,0.10) 0%, transparent 65%);"></div>
-    <div class="absolute bottom-0 right-0 w-[500px] h-[400px] pointer-events-none"
-         style="background: radial-gradient(ellipse at bottom right, rgba(16,185,129,0.08) 0%, transparent 65%);"></div>
 
     <div class="max-w-[1360px] mx-auto relative">
 
@@ -849,10 +839,8 @@
     .wcu-card:hover .wcu-icon-green { color: #059669; }
 </style>
 
-<section class="relative py-28 px-6 overflow-hidden" style="background:#e8e8ed;">
+<section class="relative py-28 px-6 overflow-hidden" style="background:#f1f6fb;">
 
-    <div class="absolute pointer-events-none" style="top:-180px;left:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.05) 0%,transparent 68%);"></div>
-    <div class="absolute pointer-events-none" style="bottom:-140px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,0.05) 0%,transparent 68%);"></div>
 
     <div class="relative max-w-[1360px] mx-auto">
 
@@ -969,11 +957,6 @@
      - Row 3: large image right, content left
 ════════════════════════════════════════════════════════ --}}
 <section class="relative py-28 px-6 overflow-hidden" style="background:#ffffff;">
-    {{-- Ambient orbs --}}
-    <div class="absolute top-0 right-0 w-[600px] h-[500px] pointer-events-none"
-         style="background: radial-gradient(ellipse at top right, rgba(37,99,235,0.07) 0%, transparent 65%);"></div>
-    <div class="absolute bottom-0 left-0 w-[500px] h-[400px] pointer-events-none"
-         style="background: radial-gradient(ellipse at bottom left, rgba(16,185,129,0.07) 0%, transparent 65%);"></div>
     <div class="max-w-[1100px] mx-auto relative">
 
         {{-- Header --}}
@@ -1154,7 +1137,7 @@
      Dark animated card: left = headline + CTA, right = live chat UI
      Messages appear in sequence via CSS animation-delay
 ════════════════════════════════════════════════════════ --}}
-<section class="py-20 px-6" style="background:#e8e8ed;">
+<section class="py-20 px-6" style="background:#f1f6fb;">
     <div class="max-w-[1100px] mx-auto">
         <div class="webdev-bg relative rounded-[28px] overflow-hidden"
              style="box-shadow: 0 32px 90px rgba(0,0,0,0.32), 0 8px 24px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.06);">
@@ -1164,9 +1147,6 @@
             <div class="webdev-ring-2 absolute pointer-events-none" style="right:-60px;top:50%;width:500px;height:500px;border-radius:50%;border:1px solid rgba(255,255,255,0.07);"></div>
             <div class="webdev-ring-3 absolute pointer-events-none" style="right:30px;top:50%;width:330px;height:330px;border-radius:50%;border:1px solid rgba(255,255,255,0.06);"></div>
 
-            {{-- Ambient glow --}}
-            <div class="absolute pointer-events-none" style="top:-60px;left:80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.24) 0%,transparent 68%);"></div>
-            <div class="absolute pointer-events-none" style="bottom:-60px;right:120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,0.22) 0%,transparent 68%);"></div>
 
             <div class="grid lg:grid-cols-2 items-center" style="min-height:440px;">
 
@@ -1392,59 +1372,179 @@
 {{-- ═══════════════════════════════════════════════════════
      TESTIMONIALS
 ════════════════════════════════════════════════════════ --}}
-@if($testimonials->count())
-<section class="py-28 px-6 bg-[#04040a] relative overflow-hidden">
-    <div class="orb w-[400px] h-[400px] top-0 right-0 opacity-50"
-         style="background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%);"></div>
+<style>
+    .testi-card {
+        background: #0a0a12;
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 22px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .testi-card.testi-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .testi-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 56px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.15);
+        border-color: rgba(255,255,255,0.18);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .testi-card.testi-visible:hover {
+        transform: translateY(-8px);
+    }
+    .testi-quote-mark {
+        font-size: 96px;
+        line-height: 1;
+        font-family: Georgia, serif;
+        color: rgba(255,255,255,0.06);
+        position: absolute;
+        top: 12px;
+        left: 24px;
+        pointer-events: none;
+        user-select: none;
+        letter-spacing: -4px;
+    }
+    .testi-star { filter: drop-shadow(0 0 4px rgba(245,158,11,0.55)); }
+</style>
 
-    <div class="relative max-w-6xl mx-auto">
+@if($testimonials->count())
+<section class="py-28 px-6 relative overflow-hidden" style="background:#04040a;">
+
+
+    <div class="relative max-w-[1360px] mx-auto px-2">
+
+        {{-- Header --}}
         <div class="text-center mb-16">
-            <p class="text-xs font-semibold text-purple-400 uppercase tracking-widest mb-3">Testimonials</p>
-            <h2 class="text-4xl font-bold text-white tracking-tight">Trusted by founders</h2>
+            <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-5">Client Stories</p>
+            <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-5">What Our Clients Say</h2>
+            <p class="text-[17px] leading-relaxed max-w-lg mx-auto" style="color:rgba(255,255,255,0.45);">We help businesses build powerful digital solutions that deliver real results.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            @foreach($testimonials as $testimonial)
-            <div class="p-6 rounded-2xl border"
-                 style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08); backdrop-filter: blur(10px);">
+        {{-- Cards --}}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="testiGrid">
+            @foreach($testimonials as $i => $testimonial)
+            <div class="testi-card relative p-8" style="transition-delay:{{ $i * 110 }}ms;">
+
+                <span class="testi-quote-mark">"</span>
+
                 {{-- Stars --}}
-                <div class="flex gap-0.5 mb-4">
-                    @for($i = 0; $i < min($testimonial->rating, 5); $i++)
-                        <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <div class="flex items-center gap-1 mb-6 relative z-10">
+                    @for($s = 0; $s < min($testimonial->rating ?? 5, 5); $s++)
+                        <svg class="testi-star w-4 h-4" fill="#f59e0b" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     @endfor
                 </div>
-                <p class="text-gray-300 text-[16px] leading-relaxed mb-5">"{{ $testimonial->content }}"</p>
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
-                         style="background: linear-gradient(135deg, #2563eb, #7c3aed);">
-                        {{ strtoupper(substr($testimonial->name, 0, 1)) }}
-                    </div>
-                    <div>
-                        <p class="text-sm font-semibold text-white">{{ $testimonial->name }}</p>
-                        @if($testimonial->position)
-                            <p class="text-xs text-gray-500">{{ $testimonial->position }}</p>
-                        @endif
+
+                {{-- Quote text --}}
+                <p class="relative z-10 text-[16px] leading-[1.8] mb-8" style="color:rgba(255,255,255,0.72);">"{{ $testimonial->content }}"</p>
+
+                {{-- Divider --}}
+                <div style="border-top:1px solid rgba(255,255,255,0.07);" class="pt-6">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-11 h-11 rounded-full flex items-center justify-center text-[15px] font-bold text-white shrink-0"
+                             style="background:linear-gradient(135deg,#3b82f6,#10b981);">
+                            {{ strtoupper(substr($testimonial->name, 0, 1)) }}
+                        </div>
+                        <div>
+                            <p class="text-[15px] font-semibold text-white leading-tight">{{ $testimonial->name }}</p>
+                            @if($testimonial->position)
+                                <p class="text-[13px] mt-0.5" style="color:rgba(255,255,255,0.35);">{{ $testimonial->position }}</p>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
+
+        {{-- Footer line --}}
+        <p class="text-center text-[13px] mt-14" style="color:rgba(255,255,255,0.25);">
+            Trusted by startups and growing businesses across Africa
+        </p>
+
     </div>
 </section>
 @endif
 
+<script>
+(function(){
+    var cards = document.querySelectorAll('#testiGrid .testi-card');
+    if(!cards.length || !('IntersectionObserver' in window)) {
+        cards.forEach(function(c){ c.classList.add('testi-visible'); });
+        return;
+    }
+    var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){ e.target.classList.add('testi-visible'); obs.unobserve(e.target); }
+        });
+    }, { threshold: 0.10 });
+    cards.forEach(function(c){ obs.observe(c); });
+})();
+</script>
+
 {{-- ═══════════════════════════════════════════════════════
      CTA
 ════════════════════════════════════════════════════════ --}}
-<section class="py-28 px-6" style="background:#ffffff;">
-    <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-gray-900 tracking-tight mb-5">Ready to build something great?</h2>
-        <p class="text-[18px] text-gray-500 mb-10">Tell us about your project. We'll respond within 24 hours.</p>
-        <a href="{{ route('contact') }}"
-           class="inline-block px-8 py-4 rounded-2xl text-sm font-semibold text-white transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl"
-           style="background: linear-gradient(135deg, #2563eb, #7c3aed); box-shadow: 0 12px 40px rgba(37,99,235,0.35);">
-            Start a Conversation
-        </a>
+<section class="relative py-32 px-6 overflow-hidden" style="background:#ffffff;">
+
+
+    <div class="relative max-w-[860px] mx-auto text-center">
+
+        {{-- Label --}}
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8"
+             style="background:rgba(37,99,235,0.07);border:1px solid rgba(37,99,235,0.14);">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+            <span class="text-[12px] font-semibold text-blue-600 uppercase tracking-widest">Available for new projects</span>
+        </div>
+
+        {{-- Headline --}}
+        <h2 class="text-5xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.1]">
+            Ready to build<br>
+            <span style="background:linear-gradient(135deg,#2563eb 0%,#10b981 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                something great?
+            </span>
+        </h2>
+
+        <p class="text-[18px] text-gray-500 leading-relaxed mb-12 max-w-lg mx-auto">
+            Tell us about your project. We'll get back to you within 24 hours with a clear plan.
+        </p>
+
+        {{-- Buttons --}}
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="{{ route('contact') }}"
+               class="inline-flex items-center gap-2.5 px-8 py-4 rounded-[14px] text-[15px] font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:-translate-y-0.5 active:scale-[0.98]"
+               style="background:linear-gradient(135deg,#2563eb,#1d4ed8);box-shadow:0 4px 6px rgba(37,99,235,0.15),0 12px 40px rgba(37,99,235,0.30),inset 0 1px 0 rgba(255,255,255,0.15);">
+                Start a Conversation
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+            </a>
+            <a href="{{ route('projects.index') }}"
+               class="inline-flex items-center gap-2 px-8 py-4 rounded-[14px] text-[15px] font-semibold text-gray-700 transition-all duration-300 hover:text-gray-900 hover:bg-gray-100 hover:-translate-y-0.5"
+               style="border:1.5px solid rgba(0,0,0,0.10);">
+                View Our Work
+            </a>
+        </div>
+
+        {{-- Trust row --}}
+        <div class="flex items-center justify-center gap-6 mt-14 flex-wrap">
+            <div class="flex items-center gap-2 text-[13px] text-gray-400">
+                <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                No commitment required
+            </div>
+            <div class="w-px h-4 bg-gray-200"></div>
+            <div class="flex items-center gap-2 text-[13px] text-gray-400">
+                <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Response within 24 hours
+            </div>
+            <div class="w-px h-4 bg-gray-200"></div>
+            <div class="flex items-center gap-2 text-[13px] text-gray-400">
+                <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Free project consultation
+            </div>
+        </div>
+
     </div>
 </section>
 

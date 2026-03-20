@@ -305,7 +305,7 @@
 </main>
 
 {{-- ═══ FOOTER ═══ --}}
-<footer class="mt-24 border-t border-gray-100" style="background:#e8e8ed;">
+<footer class="mt-24 border-t border-gray-100" style="background:#f1f6fb;">
     <div class="max-w-[1160px] mx-auto px-6 py-16">
         <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
 
