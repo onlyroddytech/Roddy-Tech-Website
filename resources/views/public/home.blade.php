@@ -140,20 +140,6 @@
      *  Both snap back on :active (tactile press feel)
      * ─────────────────────────────────────────────
      */
-    .btn-primary {
-        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-        transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-    .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 32px rgba(37,99,235,0.42) !important;
-    }
-    .btn-primary:active { transform: translateY(0px); }
-
-    .btn-secondary { transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease; }
-    .btn-secondary:hover { transform: translateY(-2px); border-color: #d1d5db; background: #f9fafb; }
-    .btn-secondary:active { transform: translateY(0px); }
-
     /*
      * ─────────────────────────────────────────────
      *  GLASS CARDS (floating mockup overlays)
@@ -194,38 +180,29 @@
     .trust-avatar-dark  { box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px rgba(30,41,59,0.22); }
 
     /*
-     * SCROLL MOUSE INDICATOR (bottom-center of hero)
-     * Dot slides down inside the mouse outline and fades at 70% travel
-     * Resets to top and loops — gives a continuous "scroll down" hint
-     */
-    @keyframes scrollDot {
-        0%   { transform: translateY(0px);  opacity: 1; }
-        70%  { transform: translateY(10px); opacity: 0; }
-        100% { transform: translateY(0px);  opacity: 0; }
-    }
-    .scroll-dot { animation: scrollDot 1.9s ease-in-out infinite; }
-
-    /* Product strip — logos/favicons will be dynamic later */
-
-    /*
      * SERVICE CARDS — Apple glass
      * backdrop-filter gives the frosted look; needs a non-white section bg to show.
      * Inner top highlight (inset 0 1px) = the "raised edge" illusion from macOS.
      * Featured (1 & 3): stronger blue tint + bolder border + deeper glow.
      */
     .svc-card {
-        background: #ffffff;
-        border: 1px solid #e5eaf2;
+        background: #f3f4f6;
+        border: 1px solid #e5e7eb;
         border-radius: 18px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 20px rgba(0,0,0,0.05);
-        transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease, border-color 0.28s ease;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        will-change: transform, box-shadow;
+        transition: transform 0.18s cubic-bezier(0.22,1,0.36,1),
+                    box-shadow 0.18s cubic-bezier(0.22,1,0.36,1),
+                    border-color 0.18s ease;
     }
     .svc-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 16px 40px rgba(37,99,235,0.10), 0 4px 12px rgba(0,0,0,0.06);
-        border-color: rgba(37,99,235,0.18);
+        box-shadow: 0 20px 48px rgba(0,0,0,0.10);
+        border-color: #bfdbfe;
     }
-    .svc-card-featured, .svc-card-green { background: #ffffff !important; }
+    .svc-card h3 { color: #111827; }
+    .svc-card p  { color: #4b5563; }
+    .svc-card li { color: #374151; }
     .svc-check {
         flex-shrink: 0;
         width: 17px;
@@ -233,12 +210,13 @@
         color: #10b981;
     }
     .product-item {
-        transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1);
+        will-change: transform;
+        transition: transform 0.18s cubic-bezier(0.22,1,0.36,1);
         cursor: pointer;
-        -webkit-tap-highlight-color: transparent; /* removes blue flash on mobile tap */
+        -webkit-tap-highlight-color: transparent;
     }
-    .product-item:hover  { transform: translateY(-8px); }
-    .product-item:active { transform: translateY(-4px); } /* touch feedback on mobile */
+    .product-item:hover  { transform: scale(1.10); }
+    .product-item:active { transform: scale(1.05); }
 
     /*
      * PROJECT CARDS
@@ -255,7 +233,7 @@
         overflow: hidden;
         border: 1px solid rgba(255,255,255,0.72);
         box-shadow: 0 2px 12px rgba(0,0,0,0.05), 0 10px 40px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.96);
-        transition: transform 0.32s cubic-bezier(0.22,1,0.36,1), box-shadow 0.32s ease;
+        transition: transform 0.18s cubic-bezier(0.22,1,0.36,1), box-shadow 0.18s ease;
     }
     .proj-card:hover {
         transform: translateY(-12px);
@@ -271,7 +249,7 @@
         position: absolute; inset: 0;
         background: linear-gradient(180deg, rgba(15,23,42,0) 30%, rgba(15,23,42,0.72) 100%);
         opacity: 0;
-        transition: opacity 0.32s ease;
+        transition: opacity 0.18s ease;
         display: flex; align-items: flex-end; padding: 20px;
     }
     .proj-card:hover .proj-overlay { opacity: 1; }
@@ -290,31 +268,6 @@
         0%, 100% { background-position: 0% 50%; }
         50%       { background-position: 100% 50%; }
     }
-    /* Rings slowly pulse opacity + scale */
-    /*
-     * PRODUCT CARDS (spotlight section)
-     * Glass + hover lift, icon scales on hover, arrow slides right
-     */
-    .prod-card {
-        background: rgba(255,255,255,0.72);
-        backdrop-filter: blur(20px) saturate(200%);
-        -webkit-backdrop-filter: blur(20px) saturate(200%);
-        border: 1px solid rgba(255,255,255,0.72);
-        border-radius: 20px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 8px 28px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.96);
-        transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease;
-        display: block;
-        text-decoration: none;
-    }
-    .prod-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 52px rgba(37,99,235,0.12), 0 8px 20px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.96);
-    }
-    .prod-card:hover .prod-icon { transform: scale(1.10); }
-    .prod-icon { transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1); }
-    .prod-arrow { transition: transform 0.22s ease; }
-    .prod-card:hover .prod-arrow { transform: translateX(4px); }
-
     .webdev-ring   { animation: ringPulse 6s ease-in-out infinite; }
     .webdev-ring-2 { animation: ringPulse 7s ease-in-out 1.5s infinite; }
     .webdev-ring-3 { animation: ringPulse 8s ease-in-out 3s infinite; }
@@ -363,26 +316,6 @@
     .btn-secondary { transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease; }
     .btn-secondary:hover { transform: translateY(-2px); border-color: #d1d5db; background: #f9fafb; }
     .btn-secondary:active { transform: translateY(0); }
-    /* Dark glass button (used on dark sections) */
-    .btn-glass-dark {
-        background: rgba(255,255,255,0.10);
-        border: 1.5px solid rgba(255,255,255,0.22);
-        color: #ffffff;
-        backdrop-filter: blur(12px);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.15);
-        transition: transform 0.20s ease, background 0.20s ease, box-shadow 0.20s ease;
-    }
-    .btn-glass-dark:hover {
-        transform: translateY(-3px) scale(1.02);
-        background: rgba(255,255,255,0.18);
-        box-shadow: 0 12px 40px rgba(37,99,235,0.38), 0 6px 20px rgba(16,185,129,0.22), inset 0 1px 0 rgba(255,255,255,0.22);
-    }
-    /* ── Scroll reveal ── */
-    /* Stagger delay helpers for grids */
-    .reveal-d1 { transition-delay: 0.08s !important; }
-    .reveal-d2 { transition-delay: 0.16s !important; }
-    .reveal-d3 { transition-delay: 0.24s !important; }
-    .reveal-d4 { transition-delay: 0.32s !important; }
     .reveal {
         opacity: 0;
         transform: translateY(20px);
@@ -658,12 +591,11 @@
                     box-shadow: 0 8px 40px rgba(0,0,0,0.07), 0 24px 64px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.98);">
 
         {{-- Services grid --}}
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
             {{-- 1. Web Development --}}
-            <div class="svc-card svc-card-featured p-8 cursor-default">
-                <div class="w-[52px] h-[52px] rounded-xl flex items-center justify-center mb-6"
-                     style="background:#eff6ff; border:1px solid #bfdbfe;">
+            <div class="svc-card svc-card-featured p-5 sm:p-7 cursor-default">
+                <div class="w-[44px] h-[44px] rounded-xl flex items-center justify-center mb-6 bg-white border border-gray-200">
                     <svg class="w-6 h-6" style="color:#2563eb;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
                     </svg>
@@ -681,9 +613,8 @@
             </div>
 
             {{-- 2. Mobile App Development --}}
-            <div class="svc-card svc-card-green p-8 cursor-default">
-                <div class="w-[52px] h-[52px] rounded-xl flex items-center justify-center mb-6"
-                     style="background:#ecfdf5; border:1px solid #a7f3d0;">
+            <div class="svc-card svc-card-green p-5 sm:p-7 cursor-default">
+                <div class="w-[44px] h-[44px] rounded-xl flex items-center justify-center mb-6 bg-white border border-gray-200">
                     <svg class="w-6 h-6" style="color:#10b981;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                     </svg>
@@ -701,9 +632,8 @@
             </div>
 
             {{-- 3. SaaS Platforms --}}
-            <div class="svc-card svc-card-featured p-8 cursor-default">
-                <div class="w-[52px] h-[52px] rounded-xl flex items-center justify-center mb-6"
-                     style="background:#eff6ff; border:1px solid #bfdbfe;">
+            <div class="svc-card svc-card-featured p-5 sm:p-7 cursor-default">
+                <div class="w-[44px] h-[44px] rounded-xl flex items-center justify-center mb-6 bg-white border border-gray-200">
                     <svg class="w-6 h-6" style="color:#2563eb;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7zm0 5h16M9 4v16"/>
                     </svg>
@@ -721,9 +651,8 @@
             </div>
 
             {{-- 4. UI/UX Design --}}
-            <div class="svc-card svc-card-green p-8 cursor-default">
-                <div class="w-[52px] h-[52px] rounded-xl flex items-center justify-center mb-6"
-                     style="background:#ecfdf5; border:1px solid #a7f3d0;">
+            <div class="svc-card svc-card-green p-5 sm:p-7 cursor-default">
+                <div class="w-[44px] h-[44px] rounded-xl flex items-center justify-center mb-6 bg-white border border-gray-200">
                     <svg class="w-6 h-6" style="color:#10b981;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
                     </svg>
@@ -741,9 +670,8 @@
             </div>
 
             {{-- 5. Cloud & Hosting --}}
-            <div class="svc-card svc-card-featured p-8 cursor-default">
-                <div class="w-[52px] h-[52px] rounded-xl flex items-center justify-center mb-6"
-                     style="background:#eff6ff; border:1px solid #bfdbfe;">
+            <div class="svc-card svc-card-featured p-5 sm:p-7 cursor-default">
+                <div class="w-[44px] h-[44px] rounded-xl flex items-center justify-center mb-6 bg-white border border-gray-200">
                     <svg class="w-6 h-6" style="color:#2563eb;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
                     </svg>
@@ -761,9 +689,8 @@
             </div>
 
             {{-- 6. Digital Solutions --}}
-            <div class="svc-card svc-card-green p-8 cursor-default">
-                <div class="w-[52px] h-[52px] rounded-xl flex items-center justify-center mb-6"
-                     style="background:#ecfdf5; border:1px solid #a7f3d0;">
+            <div class="svc-card svc-card-green p-5 sm:p-7 cursor-default">
+                <div class="w-[44px] h-[44px] rounded-xl flex items-center justify-center mb-6 bg-white border border-gray-200">
                     <svg class="w-6 h-6" style="color:#10b981;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
@@ -807,147 +734,143 @@
 </section>
 
 {{-- ═══════════════════════════════════════════════════════
-     WHY CHOOSE US
+     WHY CHOOSE US  — card style matches About › What We Do
 ════════════════════════════════════════════════════════ --}}
 <style>
+    /* Reveal: hidden until IntersectionObserver fires wcu-visible */
     .wcu-card {
-        background: rgba(255,255,255,0.60);
-        backdrop-filter: blur(24px) saturate(200%);
-        -webkit-backdrop-filter: blur(24px) saturate(200%);
-        border: 1px solid rgba(255,255,255,0.80);
-        border-radius: 20px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 10px 32px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.95);
-        transition: transform 0.30s cubic-bezier(0.22,1,0.36,1), box-shadow 0.30s ease, border-color 0.30s ease;
         opacity: 0;
         transform: translateY(24px);
+        will-change: transform, box-shadow;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
     .wcu-card.wcu-visible {
         opacity: 1;
         transform: translateY(0);
-        transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22,1,0.36,1), box-shadow 0.30s ease, border-color 0.30s ease;
+        transition: opacity 0.55s ease,
+                    transform 0.55s cubic-bezier(0.22,1,0.36,1),
+                    box-shadow 0.18s cubic-bezier(0.22,1,0.36,1),
+                    border-color 0.18s ease;
     }
-    .wcu-card:hover {
-        transform: translateY(-7px);
-        box-shadow: 0 20px 52px rgba(37,99,235,0.13), 0 4px 16px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.98);
-        border-color: rgba(37,99,235,0.22);
+    /* Lift on hover — override reveal speed with fast hover speed */
+    .wcu-card.wcu-visible:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 48px rgba(0,0,0,0.10);
+        border-color: #bfdbfe;
+        transition: transform 0.18s cubic-bezier(0.22,1,0.36,1),
+                    box-shadow 0.18s cubic-bezier(0.22,1,0.36,1),
+                    border-color 0.18s ease;
     }
-    .wcu-icon-bg {
-        transition: transform 0.30s cubic-bezier(0.34,1.56,0.64,1);
+    /* Icon scale on hover */
+    .wcu-card:hover .wcu-icon-wrap {
+        transform: scale(1.10);
     }
-    .wcu-card:hover .wcu-icon-bg { transform: scale(1.10); }
-    .wcu-card:hover .wcu-icon-blue  { color: #1d4ed8; }
-    .wcu-card:hover .wcu-icon-green { color: #059669; }
+    .wcu-icon-wrap {
+        will-change: transform;
+        transition: transform 0.18s cubic-bezier(0.22,1,0.36,1);
+    }
+    /* Accent line slides out on hover */
+    .wcu-card:hover .wcu-accent { width: 3rem; }
+    .wcu-accent {
+        height: 2px;
+        width: 0;
+        border-radius: 9999px;
+        transition: width 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
 </style>
 
-<section class="relative py-28 px-6 overflow-hidden" style="background:#f1f6fb;">
+<section class="py-20 sm:py-28 px-4 sm:px-6" style="background:#f8f9fa;">
+    <div class="max-w-7xl mx-auto">
 
-
-    <div class="relative max-w-[1360px] mx-auto">
-
-        <div class="text-center mb-[72px]">
-            <span class="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.22em] uppercase mb-5 px-3.5 py-1.5 rounded-full"
-                  style="color:#2563eb; background:rgba(37,99,235,0.07); border:1px solid rgba(37,99,235,0.14);">
-                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                </svg>
-                Our Edge
-            </span>
-            <h2 class="text-[40px] md:text-[50px] font-black text-gray-900 tracking-tight leading-[1.10] mb-5">
+        <div class="text-center mb-14">
+            <p class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-4">Our Edge</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight leading-[1.10] mb-5">
                 Why Businesses Trust<br>
-                <span style="background:linear-gradient(135deg,#2563eb 30%,#10b981 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Roddy Technologies</span>
+                <span class="text-blue-600">Roddy Technologies</span>
             </h2>
-            <p class="text-[17px] text-gray-500 max-w-[500px] mx-auto leading-relaxed font-normal">
+            <p class="text-base text-gray-500 max-w-[600px] mx-auto leading-relaxed">
                 We build scalable, high-performance digital solutions designed for growth.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7" id="wcuGrid">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="wcuGrid">
 
-            <div class="wcu-card p-9" style="transition-delay:0ms;">
-                <div class="wcu-icon-bg w-[60px] h-[60px] rounded-2xl flex items-center justify-center mb-7"
-                     style="background:#2563eb;">
-                    <svg class="wcu-icon-blue w-[26px] h-[26px]" style="color:#ffffff;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            {{-- Card 1 --}}
+            <div class="wcu-card group bg-gray-100 border border-gray-200 rounded-2xl p-5 sm:p-6 cursor-default" style="transition-delay:0ms;">
+                <div class="wcu-icon-wrap w-11 h-11 rounded-xl flex items-center justify-center mb-5 bg-white border border-gray-200">
+                    <svg class="w-5 h-5" style="color:#2563eb;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
                 </div>
-                <h3 class="text-[17px] font-bold text-gray-900 mb-2.5 tracking-tight">Fast & Efficient Delivery</h3>
-                <p class="text-[15px] text-gray-500 leading-relaxed">We deliver projects on time without ever compromising on quality.</p>
+                <h3 class="text-[18px] font-bold text-gray-900 mb-2">Fast & Efficient Delivery</h3>
+                <p class="text-base text-gray-600 leading-relaxed">We deliver projects on time without ever compromising on quality.</p>
+                <div class="wcu-accent mt-5" style="background:#2563eb;"></div>
             </div>
 
-            <div class="wcu-card p-9" style="transition-delay:90ms;">
-                <div class="wcu-icon-bg w-[60px] h-[60px] rounded-2xl flex items-center justify-center mb-7"
-                     style="background:#10b981;">
-                    <svg class="wcu-icon-green w-[26px] h-[26px]" style="color:#ffffff;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            {{-- Card 2 --}}
+            <div class="wcu-card group bg-gray-100 border border-gray-200 rounded-2xl p-5 sm:p-6 cursor-default" style="transition-delay:90ms;">
+                <div class="wcu-icon-wrap w-11 h-11 rounded-xl flex items-center justify-center mb-5 bg-white border border-gray-200">
+                    <svg class="w-5 h-5" style="color:#059669;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
                 </div>
-                <h3 class="text-[17px] font-bold text-gray-900 mb-2.5 tracking-tight">Premium UI/UX Design</h3>
-                <p class="text-[15px] text-gray-500 leading-relaxed">Modern, clean, and user-focused interfaces that stand out from the crowd.</p>
+                <h3 class="text-[18px] font-bold text-gray-900 mb-2">Premium UI/UX Design</h3>
+                <p class="text-base text-gray-600 leading-relaxed">Modern, clean, and user-focused interfaces that stand out from the crowd.</p>
+                <div class="wcu-accent mt-5" style="background:#059669;"></div>
             </div>
 
-            <div class="wcu-card p-9" style="transition-delay:180ms;">
-                <div class="wcu-icon-bg w-[60px] h-[60px] rounded-2xl flex items-center justify-center mb-7"
-                     style="background:#2563eb;">
-                    <svg class="wcu-icon-blue w-[26px] h-[26px]" style="color:#ffffff;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            {{-- Card 3 --}}
+            <div class="wcu-card group bg-gray-100 border border-gray-200 rounded-2xl p-5 sm:p-6 cursor-default" style="transition-delay:180ms;">
+                <div class="wcu-icon-wrap w-11 h-11 rounded-xl flex items-center justify-center mb-5 bg-white border border-gray-200">
+                    <svg class="w-5 h-5" style="color:#2563eb;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
                     </svg>
                 </div>
-                <h3 class="text-[17px] font-bold text-gray-900 mb-2.5 tracking-tight">Scalable Architecture</h3>
-                <p class="text-[15px] text-gray-500 leading-relaxed">Systems built to grow with your business from day one to enterprise scale.</p>
+                <h3 class="text-[18px] font-bold text-gray-900 mb-2">Scalable Architecture</h3>
+                <p class="text-base text-gray-600 leading-relaxed">Systems built to grow with your business from day one to enterprise scale.</p>
+                <div class="wcu-accent mt-5" style="background:#2563eb;"></div>
             </div>
 
-            <div class="wcu-card p-9" style="transition-delay:270ms;">
-                <div class="wcu-icon-bg w-[60px] h-[60px] rounded-2xl flex items-center justify-center mb-7"
-                     style="background:#10b981;">
-                    <svg class="wcu-icon-green w-[26px] h-[26px]" style="color:#ffffff;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            {{-- Card 4 --}}
+            <div class="wcu-card group bg-gray-100 border border-gray-200 rounded-2xl p-5 sm:p-6 cursor-default" style="transition-delay:0ms;">
+                <div class="wcu-icon-wrap w-11 h-11 rounded-xl flex items-center justify-center mb-5 bg-white border border-gray-200">
+                    <svg class="w-5 h-5" style="color:#059669;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                     </svg>
                 </div>
-                <h3 class="text-[17px] font-bold text-gray-900 mb-2.5 tracking-tight">Secure & Reliable</h3>
-                <p class="text-[15px] text-gray-500 leading-relaxed">We implement best practices for security, uptime, and platform stability.</p>
+                <h3 class="text-[18px] font-bold text-gray-900 mb-2">Secure & Reliable</h3>
+                <p class="text-base text-gray-600 leading-relaxed">We implement best practices for security, uptime, and platform stability.</p>
+                <div class="wcu-accent mt-5" style="background:#059669;"></div>
             </div>
 
-            <div class="wcu-card p-9" style="transition-delay:360ms;">
-                <div class="wcu-icon-bg w-[60px] h-[60px] rounded-2xl flex items-center justify-center mb-7"
-                     style="background:#2563eb;">
-                    <svg class="wcu-icon-blue w-[26px] h-[26px]" style="color:#ffffff;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            {{-- Card 5 --}}
+            <div class="wcu-card group bg-gray-100 border border-gray-200 rounded-2xl p-5 sm:p-6 cursor-default" style="transition-delay:90ms;">
+                <div class="wcu-icon-wrap w-11 h-11 rounded-xl flex items-center justify-center mb-5 bg-white border border-gray-200">
+                    <svg class="w-5 h-5" style="color:#2563eb;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-[17px] font-bold text-gray-900 mb-2.5 tracking-tight">Global Standard Development</h3>
-                <p class="text-[15px] text-gray-500 leading-relaxed">We follow international standards and modern technologies across every project.</p>
+                <h3 class="text-[18px] font-bold text-gray-900 mb-2">Global Standard Development</h3>
+                <p class="text-base text-gray-600 leading-relaxed">We follow international standards and modern technologies across every project.</p>
+                <div class="wcu-accent mt-5" style="background:#2563eb;"></div>
             </div>
 
-            <div class="wcu-card p-9" style="transition-delay:450ms;">
-                <div class="wcu-icon-bg w-[60px] h-[60px] rounded-2xl flex items-center justify-center mb-7"
-                     style="background:#10b981;">
-                    <svg class="wcu-icon-green w-[26px] h-[26px]" style="color:#ffffff;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            {{-- Card 6 --}}
+            <div class="wcu-card group bg-gray-100 border border-gray-200 rounded-2xl p-5 sm:p-6 cursor-default" style="transition-delay:180ms;">
+                <div class="wcu-icon-wrap w-11 h-11 rounded-xl flex items-center justify-center mb-5 bg-white border border-gray-200">
+                    <svg class="w-5 h-5" style="color:#059669;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                     </svg>
                 </div>
-                <h3 class="text-[17px] font-bold text-gray-900 mb-2.5 tracking-tight">Long-Term Support</h3>
-                <p class="text-[15px] text-gray-500 leading-relaxed">We stay with you beyond launch to ensure your product's continuous success.</p>
+                <h3 class="text-[18px] font-bold text-gray-900 mb-2">Long-Term Support</h3>
+                <p class="text-base text-gray-600 leading-relaxed">We stay with you beyond launch to ensure your product's continuous success.</p>
+                <div class="wcu-accent mt-5" style="background:#059669;"></div>
             </div>
 
         </div>
     </div>
 </section>
 
-<script>
-(function () {
-    var cards = document.querySelectorAll('#wcuGrid .wcu-card');
-    if (!cards.length || !('IntersectionObserver' in window)) {
-        cards.forEach(function (c) { c.classList.add('wcu-visible'); });
-        return;
-    }
-    var obs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-            if (e.isIntersecting) { e.target.classList.add('wcu-visible'); obs.unobserve(e.target); }
-        });
-    }, { threshold: 0.10 });
-    cards.forEach(function (c) { obs.observe(c); });
-})();
-</script>
 
 {{-- ═══════════════════════════════════════════════════════
      PROJECTS / WORK
@@ -960,7 +883,7 @@
     <div class="max-w-[1100px] mx-auto relative">
 
         {{-- Header --}}
-        <div class="text-center mb-18 reveal">
+        <div class="text-center mb-20 reveal">
             <span class="inline-block text-[16px] font-semibold text-green-600 tracking-[0.08em] uppercase mb-3">Our Work</span>
             <h2 class="text-[2.25rem] lg:text-[2.75rem] font-bold text-gray-900 tracking-[-0.03em] leading-tight mb-4">
                 Some of Our Recent Work
@@ -1410,16 +1333,16 @@
 </style>
 
 @if($testimonials->count())
-<section class="py-28 px-6 relative overflow-hidden" style="background:#04040a;">
+<section class="py-28 px-6 relative overflow-hidden" style="background:#0d1b2e;">
 
 
     <div class="relative max-w-[1360px] mx-auto px-2">
 
         {{-- Header --}}
         <div class="text-center mb-16">
-            <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/30 mb-5">Client Stories</p>
+            <p class="text-[16px] font-semibold uppercase tracking-[0.2em] text-white mb-5">Client Stories</p>
             <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-5">What Our Clients Say</h2>
-            <p class="text-[17px] leading-relaxed max-w-lg mx-auto" style="color:rgba(255,255,255,0.45);">We help businesses build powerful digital solutions that deliver real results.</p>
+            <p class="text-[17px] leading-relaxed max-w-lg mx-auto" style="color:rgba(255,255,255,0.55);">We help businesses build powerful digital solutions that deliver real results.</p>
         </div>
 
         {{-- Cards --}}
@@ -1449,7 +1372,7 @@
                         <div>
                             <p class="text-[15px] font-semibold text-white leading-tight">{{ $testimonial->name }}</p>
                             @if($testimonial->position)
-                                <p class="text-[13px] mt-0.5" style="color:rgba(255,255,255,0.35);">{{ $testimonial->position }}</p>
+                                <p class="text-[13px] mt-0.5" style="color:rgba(255,255,255,0.50);">{{ $testimonial->position }}</p>
                             @endif
                         </div>
                     </div>
@@ -1459,7 +1382,7 @@
         </div>
 
         {{-- Footer line --}}
-        <p class="text-center text-[13px] mt-14" style="color:rgba(255,255,255,0.25);">
+        <p class="text-center text-[13px] mt-14" style="color:rgba(255,255,255,0.40);">
             Trusted by startups and growing businesses across Africa
         </p>
 
@@ -1467,21 +1390,6 @@
 </section>
 @endif
 
-<script>
-(function(){
-    var cards = document.querySelectorAll('#testiGrid .testi-card');
-    if(!cards.length || !('IntersectionObserver' in window)) {
-        cards.forEach(function(c){ c.classList.add('testi-visible'); });
-        return;
-    }
-    var obs = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-            if(e.isIntersecting){ e.target.classList.add('testi-visible'); obs.unobserve(e.target); }
-        });
-    }, { threshold: 0.10 });
-    cards.forEach(function(c){ obs.observe(c); });
-})();
-</script>
 
 {{-- ═══════════════════════════════════════════════════════
      CTA
@@ -1506,7 +1414,7 @@
             </span>
         </h2>
 
-        <p class="text-[18px] text-gray-500 leading-relaxed mb-12 max-w-lg mx-auto">
+        <p class="text-[18px] text-gray-600 leading-relaxed mb-12 max-w-lg mx-auto">
             Tell us about your project. We'll get back to you within 24 hours with a clear plan.
         </p>
 
@@ -1529,17 +1437,17 @@
 
         {{-- Trust row --}}
         <div class="flex items-center justify-center gap-6 mt-14 flex-wrap">
-            <div class="flex items-center gap-2 text-[13px] text-gray-400">
+            <div class="flex items-center gap-2 text-[13px] text-gray-600">
                 <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                 No commitment required
             </div>
             <div class="w-px h-4 bg-gray-200"></div>
-            <div class="flex items-center gap-2 text-[13px] text-gray-400">
+            <div class="flex items-center gap-2 text-[13px] text-gray-600">
                 <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                 Response within 24 hours
             </div>
             <div class="w-px h-4 bg-gray-200"></div>
-            <div class="flex items-center gap-2 text-[13px] text-gray-400">
+            <div class="flex items-center gap-2 text-[13px] text-gray-600">
                 <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                 Free project consultation
             </div>
@@ -1639,11 +1547,37 @@ document.addEventListener('DOMContentLoaded', function () {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); /* fire once */
+                    observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.14 });
         revealEls.forEach(function (el) { observer.observe(el); });
+    }
+
+    /* WCU CARDS REVEAL */
+    var wcuCards = document.querySelectorAll('#wcuGrid .wcu-card');
+    if (wcuCards.length && 'IntersectionObserver' in window) {
+        var wcuObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) { e.target.classList.add('wcu-visible'); wcuObs.unobserve(e.target); }
+            });
+        }, { threshold: 0.10 });
+        wcuCards.forEach(function (c) { wcuObs.observe(c); });
+    } else {
+        wcuCards.forEach(function (c) { c.classList.add('wcu-visible'); });
+    }
+
+    /* TESTIMONIAL CARDS REVEAL */
+    var testiCards = document.querySelectorAll('#testiGrid .testi-card');
+    if (testiCards.length && 'IntersectionObserver' in window) {
+        var testiObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) { e.target.classList.add('testi-visible'); testiObs.unobserve(e.target); }
+            });
+        }, { threshold: 0.10 });
+        testiCards.forEach(function (c) { testiObs.observe(c); });
+    } else {
+        testiCards.forEach(function (c) { c.classList.add('testi-visible'); });
     }
 
 });
