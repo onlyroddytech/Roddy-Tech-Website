@@ -40,6 +40,9 @@ return new class extends Migration
             // Progress — integer from 0 to 100 (percentage)
             $table->unsignedTinyInteger('progress')->default(0);
 
+            // Cover image — path stored in storage/app/public/projects/
+            $table->string('image')->nullable();
+
             // Timeline
             $table->date('start_date')->nullable();
             $table->date('deadline')->nullable();

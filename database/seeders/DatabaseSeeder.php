@@ -78,10 +78,47 @@ class DatabaseSeeder extends Seeder
             'deadline'   => now()->addDays(60),
         ]);
 
+        $project4 = Project::create([
+            'user_id'     => $client->id,
+            'created_by'  => $admin->id,
+            'title'       => 'SaaS Dashboard Platform',
+            'description' => 'Multi-tenant SaaS platform with subscription billing, analytics, and team management.',
+            'status'      => ProjectStatus::Ongoing,
+            'progress'    => 40,
+            'start_date'  => now()->subDays(10),
+            'deadline'    => now()->addDays(50),
+        ]);
+
+        $project5 = Project::create([
+            'user_id'     => $client->id,
+            'created_by'  => $admin->id,
+            'title'       => 'Corporate Website Redesign',
+            'description' => 'Complete redesign of a corporate website with modern UI, CMS integration, and SEO optimisation.',
+            'status'      => ProjectStatus::Completed,
+            'progress'    => 100,
+            'start_date'  => now()->subDays(90),
+            'deadline'    => now()->subDays(15),
+        ]);
+
+        $project6 = Project::create([
+            'user_id'     => $client->id,
+            'created_by'  => $admin->id,
+            'title'       => 'RTG Domains Landing Page',
+            'description' => 'High-converting landing page for RTG Domains platform with live search and instant activation flow.',
+            'status'      => ProjectStatus::Completed,
+            'progress'    => 100,
+            'start_date'  => now()->subDays(45),
+            'deadline'    => now()->subDays(2),
+        ]);
+
         // ── Project Updates ────────────────────────────────────
         ProjectUpdate::create(['project_id' => $project1->id, 'created_by' => $admin->id, 'progress' => 30, 'message' => 'Design approved by client. Development has started.']);
         ProjectUpdate::create(['project_id' => $project1->id, 'created_by' => $admin->id, 'progress' => 65, 'message' => 'Frontend complete. Integrating backend APIs now.']);
         ProjectUpdate::create(['project_id' => $project2->id, 'created_by' => $admin->id, 'progress' => 100, 'message' => 'Project completed and delivered. App live on stores.']);
+        ProjectUpdate::create(['project_id' => $project4->id, 'created_by' => $admin->id, 'progress' => 20, 'message' => 'Wireframes signed off. Backend architecture setup in progress.']);
+        ProjectUpdate::create(['project_id' => $project4->id, 'created_by' => $admin->id, 'progress' => 40, 'message' => 'Authentication and billing module complete. Moving to dashboard UI.']);
+        ProjectUpdate::create(['project_id' => $project5->id, 'created_by' => $admin->id, 'progress' => 100, 'message' => 'Site launched successfully. Client signed off on all deliverables.']);
+        ProjectUpdate::create(['project_id' => $project6->id, 'created_by' => $admin->id, 'progress' => 100, 'message' => 'Landing page live. Conversion tracking and analytics configured.']);
 
         // ── Payments ───────────────────────────────────────────
         Payment::create(['project_id' => $project1->id, 'amount' => 425000, 'status' => PaymentStatus::Partial, 'note' => '50% upfront paid on project start.']);

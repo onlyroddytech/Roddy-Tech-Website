@@ -35,7 +35,7 @@ class Project extends Model
 
     protected $fillable = [
         'user_id', 'created_by', 'title', 'description',
-        'status', 'progress', 'start_date', 'deadline',
+        'status', 'progress', 'image', 'start_date', 'deadline',
     ];
 
     protected function casts(): array
