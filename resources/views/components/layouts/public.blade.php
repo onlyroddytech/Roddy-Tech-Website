@@ -132,7 +132,7 @@
                             Login
                         </a>
                         <a href="{{ route('register') }}"
-                        class="inline-flex text-[13px] font-semibold text-white bg-gray-900 hover:bg-gray-700 px-4 py-2 rounded-[12px] transition-colors">
+                        class="inline-flex text-[16px] font-semibold text-white bg-black hover:bg-gray-700 px-5 py-2 rounded-[12px] transition-colors">
                             Sign up free
                         </a>
                     </div>
