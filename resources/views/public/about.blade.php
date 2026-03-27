@@ -137,7 +137,7 @@
 
         {{-- Badge --}}
         <div class="anim-fade-up inline-flex items-center gap-2 mb-7 px-4 py-2 rounded-full bg-blue-50 border border-blue-100">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
             <span class="text-xs font-semibold text-blue-700 uppercase tracking-widest">Who We Are</span>
         </div>
 
@@ -363,7 +363,7 @@
                     @if($live)
                     <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold
                                  bg-green-900/40 text-green-400 border border-green-800">
-                        <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>LIVE
+                        <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>LIVE
                     </span>
                     @else
                     <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold
@@ -782,7 +782,7 @@
         {{-- Badge --}}
         <div class="reveal inline-flex items-center gap-2 mb-7 px-4 py-1.5 rounded-full
                     bg-blue-900/40 border border-blue-800 text-blue-300 text-xs font-bold uppercase tracking-widest">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
             Let's Build Together
         </div>
 

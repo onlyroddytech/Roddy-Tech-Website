@@ -195,6 +195,9 @@ class DatabaseSeeder extends Seeder
             CmsSection::create($section);
         }
 
+        // ── Blog Posts ─────────────────────────────────────────
+        $this->call(BlogPostSeeder::class);
+
         // ── Products ───────────────────────────────────────────
         foreach ([
             ['title' => 'Rshop',        'description' => 'A full-featured African eCommerce platform connecting buyers and sellers with fast checkout, product management, and real-time order tracking.', 'url' => '#', 'category' => 'eCommerce', 'sort_order' => 1],

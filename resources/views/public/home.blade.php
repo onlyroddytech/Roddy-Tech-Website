@@ -418,7 +418,7 @@
                      style="background: rgba(255,255,255,0.52); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); box-shadow: 0 8px 32px rgba(0,0,0,0.11), inset 0 1px 0 rgba(255,255,255,0.85);">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-[11.5px] font-semibold text-gray-900">Active Projects</span>
-                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        <span class="w-2 h-2 rounded-full bg-green-400"></span>
                     </div>
                     <div class="text-[1.65rem] font-bold text-gray-900 leading-none mb-3">12 <span class="text-sm font-semibold text-green-600">↑ 4</span></div>
                     <div class="w-full rounded-full h-1.5 overflow-hidden" style="background: rgba(0,0,0,0.07);">
@@ -1047,7 +1047,7 @@
                     {{-- Label --}}
                     <div class="inline-flex items-center gap-2 self-start mb-6 px-3 py-1.5 rounded-full"
                          style="background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.22);">
-                        <span class="w-1.5 h-1.5 rounded-full animate-pulse" style="background:#34d399;"></span>
+                        <span class="w-1.5 h-1.5 rounded-full" style="background:#34d399;"></span>
                         <span class="text-[11px] font-semibold tracking-[0.12em] uppercase" style="color:#34d399;">Featured Service</span>
                     </div>
 
@@ -1103,7 +1103,7 @@
                                     <div>
                                         <p class="text-[12px] font-semibold" style="color:rgba(255,255,255,0.90);line-height:1.3;">Roddy Technologies</p>
                                         <div class="flex items-center gap-1">
-                                            <span class="w-1.5 h-1.5 rounded-full animate-pulse" style="background:#22c55e;"></span>
+                                            <span class="w-1.5 h-1.5 rounded-full" style="background:#22c55e;"></span>
                                             <span class="text-[10px]" style="color:rgba(255,255,255,0.38);">Online · Web Dev Team</span>
                                         </div>
                                     </div>
@@ -1370,7 +1370,7 @@
         {{-- Label --}}
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8"
              style="background:rgba(37,99,235,0.07);border:1px solid rgba(37,99,235,0.14);">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
             <span class="text-[12px] font-semibold text-blue-600 uppercase tracking-widest">Available for new projects</span>
         </div>
 

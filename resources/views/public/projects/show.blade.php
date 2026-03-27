@@ -59,7 +59,7 @@ $accentColor = $isCompleted ? '#059669' : ($isOngoing ? '#2563eb' : '#d97706');
                     @if($isOngoing)
                     <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full
                                  bg-blue-900/50 border border-blue-700 text-blue-300 text-xs font-bold">
-                        <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
                         In Progress
                     </span>
                     @elseif($isCompleted)

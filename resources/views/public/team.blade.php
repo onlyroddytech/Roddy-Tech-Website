@@ -515,7 +515,7 @@
 
         <div class="reveal inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border"
              style="background: rgba(16,185,129,0.10); border-color: rgba(16,185,129,0.24);">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
             <span class="text-xs font-semibold text-emerald-400 tracking-widest uppercase">We're Hiring</span>
         </div>
 

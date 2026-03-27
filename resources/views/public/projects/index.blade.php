@@ -95,7 +95,7 @@ $completedProjects = $projects->getCollection()->filter(fn($p) => $p->status ===
     <div class="relative max-w-7xl mx-auto text-center">
 
         <div class="inline-flex items-center gap-2 mb-7 px-4 py-2 rounded-full bg-blue-50 border border-blue-100">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
             <span class="text-xs font-semibold text-blue-700 uppercase tracking-widest">Portfolio & Work</span>
         </div>
 
@@ -143,7 +143,7 @@ $completedProjects = $projects->getCollection()->filter(fn($p) => $p->status ===
             </div>
             <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full
                          bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold shrink-0">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
                 Currently in development
             </span>
         </div>
@@ -170,7 +170,7 @@ $completedProjects = $projects->getCollection()->filter(fn($p) => $p->status ===
                     <div class="absolute top-4 left-4">
                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full
                                      text-white text-xs font-bold shadow" style="background: {{ $col }};">
-                            <span class="w-1.5 h-1.5 rounded-full bg-white/70 animate-pulse"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/70"></span>
                             In Progress
                         </span>
                     </div>
@@ -370,7 +370,7 @@ $completedProjects = $projects->getCollection()->filter(fn($p) => $p->status ===
 
         <div class="reveal inline-flex items-center gap-2 mb-7 px-4 py-1.5 rounded-full
                     bg-blue-900/40 border border-blue-800 text-blue-300 text-xs font-bold uppercase tracking-widest">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
             Start Building
         </div>
 

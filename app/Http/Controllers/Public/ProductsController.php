@@ -15,11 +15,21 @@ use Illuminate\View\View;
  */
 class ProductsController extends Controller
 {
-    /** Render the products page with all active products. */
+    /** Render the products page with active products, optional category filter. */
     public function index(): View
     {
-        return view('public.products', [
-            'products' => Product::active()->get(),
-        ]);
+        $category = request('category');
+
+        $query = Product::active();
+
+        if ($category && $category !== 'All') {
+            $query->where('category', $category);
+        }
+
+        $featured   = Product::active()->featured()->get();
+        $products   = $query->get();
+        $categories = array_merge(['All'], Product::CATEGORIES);
+
+        return view('public.products', compact('products', 'featured', 'categories', 'category'));
     }
 }

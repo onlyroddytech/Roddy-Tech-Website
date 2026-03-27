@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faq;
 use App\Models\PricingItem;
 use Illuminate\View\View;
 
@@ -15,11 +16,12 @@ use Illuminate\View\View;
  */
 class PricingController extends Controller
 {
-    /** Render the pricing page with all active pricing items. */
+    /** Render the pricing page with all active pricing items and FAQs. */
     public function index(): View
     {
         return view('public.pricing', [
             'items' => PricingItem::active()->get(),
+            'faqs'  => Faq::active()->where('category', 'pricing')->get(),
         ]);
     }
 }

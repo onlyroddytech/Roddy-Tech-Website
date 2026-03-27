@@ -118,7 +118,7 @@
 
         {{-- Badge --}}
         <div class="inline-flex items-center gap-2 mb-7 px-4 py-2 rounded-full bg-blue-50 border border-blue-100">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
             <span class="text-xs font-semibold text-blue-700 uppercase tracking-widest">What We Build</span>
         </div>
 
@@ -659,7 +659,7 @@
 
         <div class="reveal inline-flex items-center gap-2 mb-7 px-4 py-1.5 rounded-full
                     bg-blue-900/40 border border-blue-800 text-blue-300 text-xs font-bold uppercase tracking-widest">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
             Let's Build Together
         </div>
 

@@ -17,15 +17,28 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Product extends Model
 {
-    protected $fillable = ['title', 'description', 'image', 'url', 'category', 'is_active', 'sort_order'];
+    const CATEGORIES = ['Websites', 'Scripts', 'Tools', 'UI Kits', 'Templates'];
+
+    protected $fillable = [
+        'title', 'description', 'image', 'url',
+        'category', 'price', 'is_active', 'is_featured', 'sort_order',
+    ];
 
     protected function casts(): array
     {
-        return ['is_active' => 'boolean'];
+        return [
+            'is_active'   => 'boolean',
+            'is_featured' => 'boolean',
+        ];
     }
 
     public function scopeActive($query)
     {
         return $query->where('is_active', true)->orderBy('sort_order');
+    }
+
+    public function scopeFeatured($query)
+    {
+        return $query->where('is_featured', true);
     }
 }

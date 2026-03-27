@@ -190,7 +190,7 @@
         {{-- Headline block --}}
         <div class="max-w-2xl mb-14">
             <div class="h-badge inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-blue-50 border border-blue-200">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
                 <span class="text-xs font-bold text-blue-700 uppercase tracking-widest">The Roddy Blog</span>
             </div>
             <h1 class="h-title text-[2.4rem] sm:text-5xl font-black tracking-tight text-gray-900 leading-[1.06] mb-5">
