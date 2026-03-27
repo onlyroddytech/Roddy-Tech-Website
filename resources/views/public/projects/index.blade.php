@@ -78,34 +78,47 @@ $completedProjects = $projects->getCollection()->filter(fn($p) => $p->status ===
 {{-- ════════════════════════════════════════════════════════════════
      1. HERO
 ════════════════════════════════════════════════════════════════ --}}
-<section class="bg-[#0f172a] pt-32 pb-24 px-4 sm:px-6">
-    <div class="max-w-7xl mx-auto text-center">
+<section class="relative bg-white overflow-hidden pt-32 pb-24 px-4 sm:px-6">
 
-        <div class="inline-flex items-center gap-2 mb-7 px-4 py-1.5 rounded-full
-                    bg-blue-900/40 border border-blue-800 text-blue-300 text-xs font-bold uppercase tracking-widest">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-            Portfolio & Work
+    {{-- Dot grid --}}
+    <div class="absolute inset-0 pointer-events-none"
+         style="background-image: radial-gradient(circle, rgba(0,0,0,0.07) 1.5px, transparent 1.5px); background-size: 30px 30px;"></div>
+
+    {{-- Blue glow top-right --}}
+    <div class="absolute top-0 right-0 w-[600px] h-[500px] pointer-events-none"
+         style="background: radial-gradient(ellipse at top right, rgba(37,99,235,0.07) 0%, transparent 65%);"></div>
+
+    {{-- Green glow bottom-left --}}
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] pointer-events-none"
+         style="background: radial-gradient(ellipse at bottom left, rgba(16,185,129,0.06) 0%, transparent 65%);"></div>
+
+    <div class="relative max-w-7xl mx-auto text-center">
+
+        <div class="inline-flex items-center gap-2 mb-7 px-4 py-2 rounded-full bg-blue-50 border border-blue-100">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+            <span class="text-xs font-semibold text-blue-700 uppercase tracking-widest">Portfolio & Work</span>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white
+        <h1 class="text-[2.6rem] sm:text-5xl lg:text-6xl font-black tracking-tight text-gray-900
                    leading-[1.08] max-w-[720px] mx-auto mb-6">
-            Our Work
+            Our
+            <span class="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">Work</span>
         </h1>
 
-        <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-[600px] mx-auto mb-12">
+        <p class="text-base sm:text-lg text-gray-500 leading-relaxed max-w-[600px] mx-auto mb-12">
             Explore our projects, ongoing work, and the digital solutions we've built
             for clients and our own platforms.
         </p>
 
-        <div class="flex flex-wrap items-center justify-center gap-10 sm:gap-16">
+        <div class="inline-flex items-center gap-10 sm:gap-16 px-8 py-4 rounded-2xl bg-white border border-gray-100 shadow-sm">
             @foreach([
                 [$projects->total(), 'Total Projects'],
                 [$ongoingProjects->count(), 'In Progress'],
                 [$completedProjects->count(), 'Delivered'],
             ] as [$n, $label])
             <div class="text-center">
-                <p class="text-3xl sm:text-4xl font-black text-white">{{ $n }}+</p>
-                <p class="text-xs text-slate-500 font-semibold uppercase tracking-widest mt-1">{{ $label }}</p>
+                <p class="text-3xl sm:text-4xl font-black text-gray-900">{{ $n }}+</p>
+                <p class="text-xs text-gray-400 font-semibold uppercase tracking-widest mt-1">{{ $label }}</p>
             </div>
             @endforeach
         </div>

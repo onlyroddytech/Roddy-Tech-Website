@@ -73,6 +73,22 @@
             New Project
         </a>
 
+        <div class="sidebar-section">Inbox</div>
+        <a href="{{ route('admin.contact-messages.index') }}"
+           class="sidebar-link {{ request()->routeIs('admin.contact-messages.*') ? 'active' : '' }}">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Contact Messages
+            @php $unreadCount = \App\Models\ContactMessage::unread()->count(); @endphp
+            @if($unreadCount)
+            <span class="ml-auto text-[10px] font-bold px-1.5 py-0.5 rounded-full"
+                  style="background: rgba(37,99,235,0.3); color: #93c5fd;">
+                {{ $unreadCount }}
+            </span>
+            @endif
+        </a>
+
         <div class="sidebar-section">People</div>
         <a href="{{ route('admin.users.index') }}"
            class="sidebar-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">

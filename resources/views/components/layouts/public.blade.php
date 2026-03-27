@@ -40,17 +40,17 @@
             {{-- Desktop links --}}
             <div class="hidden lg:flex items-center gap-1 text-[16px] font-medium text-gray-700">
 
-                <a href="{{ route('home') }}"           class="px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors {{ request()->routeIs('home') ? 'text-gray-900 bg-gray-100' : '' }}">Home</a>
-                <a href="{{ route('about') }}"          class="px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors {{ request()->routeIs('about') ? 'text-gray-900 bg-gray-100' : '' }}">About</a>
-                <a href="{{ route('services') }}"       class="px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors {{ request()->routeIs('services') ? 'text-gray-900 bg-gray-100' : '' }}">Services</a>
-                <a href="{{ route('projects.index') }}" class="px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors {{ request()->routeIs('projects.*') ? 'text-gray-900 bg-gray-100' : '' }}">Work</a>
-                <a href="{{ route('team') }}"           class="px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors {{ request()->routeIs('team') ? 'text-gray-900 bg-gray-100' : '' }}">Team</a>
+                <a href="{{ route('home') }}"           class="px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-200 transition-colors {{ request()->routeIs('home') ? 'text-gray-900 bg-gray-200' : '' }}">Home</a>
+                <a href="{{ route('about') }}"          class="px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-200 transition-colors {{ request()->routeIs('about') ? 'text-gray-900 bg-gray-200' : '' }}">About</a>
+                <a href="{{ route('services') }}"       class="px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-200 transition-colors {{ request()->routeIs('services') ? 'text-gray-900 bg-gray-200' : '' }}">Services</a>
+                <a href="{{ route('projects.index') }}" class="px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-200 transition-colors {{ request()->routeIs('projects.*') ? 'text-gray-900 bg-gray-200' : '' }}">Work</a>
+                <a href="{{ route('team') }}"           class="px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-200 transition-colors {{ request()->routeIs('team') ? 'text-gray-900 bg-gray-200' : '' }}">Team</a>
 
                 {{-- Explore dropdown --}}
                 <div class="relative" @mouseenter="explore=true" @mouseleave="explore=false">
-                    <button class="flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors">
+                    <button class="flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-200 transition-colors">
                         Explore
-                        <svg class="w-3 h-3 transition-transform duration-200" :class="explore?'rotate-180':''" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <svg class="w-3 h-4 transition-transform duration-200" :class="explore?'rotate-180':''" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
@@ -60,29 +60,29 @@
             x-transition:enter-end="opacity-100 translate-y-0"
             x-transition:leave="transition ease-in duration-100"
             x-transition:leave-end="opacity-0"
-            class="absolute top-full left-1/2 -translate-x-1/2 mt-[26px] w-64 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-black/10 p-1.5">
-                        <a href="{{ route('blog.index') }}"     class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                            <span class="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></span>
-                            <div><p class="text-[16px] font-medium text-gray-900">Blog</p><p class="text-[13px] text-gray-400">Insights & updates</p></div>
+            class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-black/10 p-1.5">
+                        <a href="{{ route('blog.index') }}"     class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-100 transition-colors">
+                            <span class="w-7 h-7 rounded-lg bg-blue-200 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></span>
+                            <div><p class="text-[16px] font-medium text-gray-900">Blog</p><p class="text-[13px] text-gray-500">Insights & updates</p></div>
                         </a>
-                        <a href="{{ route('products.index') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                            <span class="w-7 h-7 rounded-lg bg-green-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg></span>
-                            <div><p class="text-[16px] font-medium text-gray-900">Products</p><p class="text-[13px] text-gray-400">Tools we've shipped</p></div>
+                        <a href="{{ route('products.index') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-100 transition-colors">
+                            <span class="w-7 h-7 rounded-lg bg-green-200 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg></span>
+                            <div><p class="text-[16px] font-medium text-gray-900">Products</p><p class="text-[13px] text-gray-500">Tools we've shipped</p></div>
                         </a>
-                        <a href="{{ route('pricing.index') }}"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                            <span class="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg></span>
-                            <div><p class="text-[16px] font-medium text-gray-900">Pricing</p><p class="text-[13px] text-gray-400">Transparent rates</p></div>
+                        <a href="{{ route('pricing.index') }}"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-100 transition-colors">
+                            <span class="w-7 h-7 rounded-lg bg-blue-200 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg></span>
+                            <div><p class="text-[16px] font-medium text-gray-900">Pricing</p><p class="text-[13px] text-gray-500">Transparent rates</p></div>
                         </a>
-                        <a href="{{ route('store.index') }}"    class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                            <span class="w-7 h-7 rounded-lg bg-green-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
-                            <div><p class="text-[16px] font-medium text-gray-900">Store</p><p class="text-[13px] text-gray-400">Ready-made solutions</p></div>
+                        <a href="{{ route('store.index') }}"    class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-100 transition-colors">
+                            <span class="w-7 h-7 rounded-lg bg-green-200 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg></span>
+                            <div><p class="text-[16px] font-medium text-gray-900">Store</p><p class="text-[13px] text-gray-500">Ready-made solutions</p></div>
                         </a>
                     </div>
                 </div>
 
                 {{-- Support dropdown --}}
                 <div class="relative" @mouseenter="support=true" @mouseleave="support=false">
-                    <button class="flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors">
+                    <button class="flex items-center gap-1 px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-200 transition-colors">
                         Support
                         <svg class="w-3 h-3 transition-transform duration-200" :class="support?'rotate-180':''" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
@@ -94,23 +94,23 @@
                     x-transition:enter-end="opacity-100 translate-y-0"
                     x-transition:leave="transition ease-in duration-100"
                     x-transition:leave-end="opacity-0"
-                    class="absolute top-full left-1/2 -translate-x-1/2 mt-[26px] w-64 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-black/10 p-1.5">
-                        <a href="{{ route('support.kb') }}"        class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                            <span class="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></span>
-                            <div><p class="text-[16px] font-medium text-gray-900">Knowledge Base</p><p class="text-[13px] text-gray-400">Docs & guides</p></div>
+                    class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-black/10 p-1.5">
+                        <a href="{{ route('support.kb') }}"        class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-100 transition-colors">
+                            <span class="w-7 h-7 rounded-lg bg-blue-200 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></span>
+                            <div><p class="text-[16px] font-medium text-gray-900">Knowledge Base</p><p class="text-[13px] text-gray-500">Docs & guides</p></div>
                         </a>
-                        <a href="{{ route('support.tutorials') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                            <span class="w-7 h-7 rounded-lg bg-green-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
-                            <div><p class="text-[16px] font-medium text-gray-900">Tutorials</p><p class="text-[13px] text-gray-400">Step-by-step videos</p></div>
+                        <a href="{{ route('support.tutorials') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-100 transition-colors">
+                            <span class="w-7 h-7 rounded-lg bg-green-200 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+                            <div><p class="text-[16px] font-medium text-gray-900">Tutorials</p><p class="text-[13px] text-gray-500">Step-by-step videos</p></div>
                         </a>
-                        <a href="{{ route('support.help') }}"      class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors">
-                            <span class="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
-                            <div><p class="text-[16px] font-medium text-gray-900">Help Center</p><p class="text-[13px] text-gray-400">Common questions</p></div>
+                        <a href="{{ route('support.help') }}"      class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-100 transition-colors">
+                            <span class="w-7 h-7 rounded-lg bg-blue-200 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+                            <div><p class="text-[16px] font-medium text-gray-900">Help Center</p><p class="text-[13px] text-gray-500">Common questions</p></div>
                         </a>
                     </div>
                 </div>
 
-                <a href="{{ route('contact') }}" class="px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors {{ request()->routeIs('contact') ? 'text-gray-900 bg-gray-100' : '' }}">Contact</a>
+                <a href="{{ route('contact') }}" class="px-3 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-200 transition-colors {{ request()->routeIs('contact') ? 'text-gray-900 bg-gray-100' : '' }}">Contact</a>
             </div>
 
             {{-- Right side --}}
@@ -123,7 +123,7 @@
                 @else
                     <div class="hidden lg:flex items-center gap-3">
                         <a href="{{ route('login') }}"
-                        class="flex items-center gap-1.5 text-[13px] font-medium text-gray-700 hover:text-gray-900 transition-colors">
+                        class="flex items-center gap-2.5 text-[13px] font-medium text-black-400 hover:text-gray-700 transition-colors">
                             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none">
                                 <path d="M8 10V7a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <rect x="4" y="10" width="16" height="12" rx="3" fill="currentColor"/>
@@ -132,7 +132,7 @@
                             Login
                         </a>
                         <a href="{{ route('register') }}"
-                        class="inline-flex text-[16px] font-semibold text-white bg-black hover:bg-gray-700 px-5 py-2 rounded-[12px] transition-colors">
+                        class="inline-flex text-[16px] font-semibold text-white bg-black hover:bg-gray-800 px-5 py-2 rounded-[12px] transition-colors">
                             Sign up free
                         </a>
                     </div>
@@ -141,8 +141,8 @@
                 {{-- Language switcher --}}
                 <div class="hidden lg:block relative" x-data="{ langOpen: false }" @click.outside="langOpen=false">
                     <button @click="langOpen=!langOpen"
-                            class="flex items-center gap-1.5 px-3 py-2 rounded-[10px] text-[13px] font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
-                            :class="langOpen ? 'bg-gray-100 text-gray-900' : ''">
+                            class="flex items-center gap-1.5 px-3 py-2 rounded-[10px] text-[13px] font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-200 transition-colors"
+                            :class="langOpen ? 'bg-gray-200 text-gray-900' : ''">
                         <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zm0 0c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9M3 12h18"/>
                         </svg>
@@ -153,17 +153,17 @@
                     </button>
 
                     <div x-show="langOpen"
-                         x-transition:enter="transition ease-out duration-150"
-                         x-transition:enter-start="opacity-0 scale-95 -translate-y-1"
-                         x-transition:enter-end="opacity-100 scale-100 translate-y-0"
-                         x-transition:leave="transition ease-in duration-100"
-                         x-transition:leave-end="opacity-0 scale-95"
-                         class="absolute right-0 mt-2 w-44 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-black/10 p-1.5 z-50"
-                         style="top:100%;">
+                        x-transition:enter="transition ease-out duration-150"
+                        x-transition:enter-start="opacity-0 scale-95 -translate-y-1"
+                        x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                        x-transition:leave="transition ease-in duration-100"
+                        x-transition:leave-end="opacity-0 scale-95"
+                        class="absolute right-0 mt-2 w-44 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-black/10 p-1.5 z-50"
+                        style="top:100%;">
                         <template x-for="lang in $store.lang.options" :key="lang.code">
                             <button @click="$store.lang.set(lang); langOpen=false"
                                     class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left transition-colors"
-                                    :class="$store.lang.current.code === lang.code ? 'bg-gray-50 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'">
+                                    :class="$store.lang.current.code === lang.code ? 'bg-gray-50 text-gray-900' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'">
                                 <span class="text-base leading-none" x-text="lang.flag"></span>
                                 <div>
                                     <p class="text-[12.5px] font-semibold leading-tight" x-text="lang.label"></p>
@@ -178,11 +178,11 @@
                 </div>
 
                 {{-- Hamburger --}}
-                <button @click="menu=!menu" class="lg:hidden w-9 h-9 flex items-center justify-center rounded-xl transition-colors group">
-                    <svg x-show="!menu" class="w-5 h-5 text-green-500 group-hover:text-blue-600 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <button @click="menu=!menu" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-xl transition-colors group">
+                    <svg x-show="!menu" class="w-6 h-6 text-green-500 group-hover:text-blue-600 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
-                    <svg x-show="menu" x-cloak class="drawer-close-btn w-5 h-5 text-green-500 group-hover:text-blue-600 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                    <svg x-show="menu" x-cloak class="drawer-close-btn w-6 h-6 text-green-500 group-hover:text-blue-600 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>

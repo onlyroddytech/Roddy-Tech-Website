@@ -73,6 +73,11 @@ Route::middleware(['auth', 'role:admin'])
     ->group(function () {
         Route::get('/',                                         [Admin\DashboardController::class, 'index'])->name('dashboard');
 
+        // Contact Messages
+        Route::get('/contact-messages',                         [Admin\ContactMessageController::class, 'index'])->name('contact-messages.index');
+        Route::patch('/contact-messages/{contactMessage}/read', [Admin\ContactMessageController::class, 'markRead'])->name('contact-messages.read');
+        Route::delete('/contact-messages/{contactMessage}',     [Admin\ContactMessageController::class, 'destroy'])->name('contact-messages.destroy');
+
         // Users
         Route::get('/users',                                    [Admin\UserController::class, 'index'])->name('users.index');
         Route::get('/users/{user}',                             [Admin\UserController::class, 'show'])->name('users.show');

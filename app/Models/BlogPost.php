@@ -25,10 +25,20 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class BlogPost extends Model
 {
+    const CATEGORIES = [
+        'Development', 'Business', 'Technology', 'Tutorials', 'Case Studies', 'General',
+    ];
+
     protected $fillable = [
-        'author_id', 'title', 'slug', 'excerpt', 'body',
+        'author_id', 'title', 'slug', 'category', 'excerpt', 'body',
         'cover_image', 'is_published', 'published_at',
     ];
+
+    /** Estimated reading time in minutes based on body word count (~200 wpm). */
+    public function getReadTimeAttribute(): int
+    {
+        return max(1, (int) ceil(str_word_count(strip_tags($this->body)) / 200));
+    }
 
     protected function casts(): array
     {

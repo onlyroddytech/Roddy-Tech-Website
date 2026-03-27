@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
 use App\Models\CmsSection;
+use App\Models\ContactMessage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -37,13 +38,16 @@ class ContactController extends Controller
      */
     public function send(Request $request): RedirectResponse
     {
-        $request->validate([
+        $data = $request->validate([
             'name'    => 'required|string|max:100',
-            'email'   => 'required|email',
-            'message' => 'required|string|max:2000',
+            'email'   => 'required|email|max:150',
+            'subject' => 'nullable|string|max:200',
+            'service' => 'nullable|string|max:100',
+            'message' => 'required|string|min:10|max:2000',
         ]);
 
-        // TODO: send email / store inquiry
-        return back()->with('success', 'Message sent! We will get back to you shortly.');
+        ContactMessage::create($data);
+
+        return back()->with('success', 'Message sent! We will get back to you within 24 hours.');
     }
 }

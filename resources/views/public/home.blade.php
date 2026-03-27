@@ -222,7 +222,7 @@
      * PROJECT CARDS
      * Large rounded cards with image on top, content below.
      * Image wrapper clips zoom on hover via overflow:hidden.
-     * Overlay fades in on hover — dark gradient + "View Project" label.
+     * Overlay fades in on hover dark gradient + "View Project" label.
      * Card lifts -10px with stronger shadow on hover.
      */
     .proj-card {
@@ -338,41 +338,9 @@
             {{-- ── Left column ── --}}
             <div class="flex flex-col min-w-0">
 
-                {{-- Badge --}}
-                <div class="hero-badge self-start mb-7"
-                     x-data="{
-                         msgs: [
-                             'Building Africa\'s Next Generation Tech Company',
-                             'Scaling Digital Products Globally',
-                             'Powering Startups & Businesses Worldwide'
-                         ],
-                         idx: 0,
-                         show: true,
-                         init() {
-                             setInterval(() => {
-                                 this.show = false;
-                                 setTimeout(() => {
-                                     this.idx = (this.idx + 1) % this.msgs.length;
-                                     this.show = true;
-                                 }, 260);
-                             }, 3200);
-                         }
-                     }">
-                    <div class="badge-pill inline-flex items-center gap-2.5 px-4 py-2 rounded-full cursor-default">
-                        {{-- Live signal dot --}}
-                        <span class="relative flex items-center justify-center w-2 h-2 shrink-0">
-                            <span class="absolute inline-flex w-full h-full rounded-full bg-blue-500 opacity-40 animate-ping"></span>
-                            <span class="relative w-2 h-2 rounded-full bg-blue-500"></span>
-                        </span>
-                        {{-- Rotating message --}}
-                        <span class="badge-text text-[11.5px] font-medium text-blue-700 tracking-[-0.01em] whitespace-nowrap"
-                              :style="{ opacity: show ? 1 : 0, transform: show ? 'translateY(0)' : 'translateY(4px)' }"
-                              x-text="msgs[idx]">Building Africa's Next Generation Digital</span>
-                    </div>
-                </div>
 
                 {{-- Headline --}}
-                <h1 class="hero-h1 text-[3rem] lg:text-[4rem] font-bold leading-[1.06] tracking-[-0.035em] text-gray-900 mb-6">
+                <h1 class="hero-h1 text-[38px] lg:text-[4rem] font-bold leading-[1.06] tracking-[-0.035em] text-gray-900 mb-6">
                     {{ $cms['hero_title'] ?? 'We Build Powerful' }}<br>
                     <span style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
                         {{ $cms['hero_tagline'] ?? 'Digital Products' }}
@@ -394,7 +362,7 @@
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
                     <a href="{{ route('projects.index') }}"
-                       class="btn-secondary inline-flex items-center gap-2 px-6 py-3 rounded-[12px] text-[16px] font-semibold text-gray-700 bg-white border border-gray-200 hover:border-gray-300 hover:bg-gray-50/80">
+                       class="btn-secondary inline-flex items-center gap-2 px-6 py-3 rounded-[12px] text-[16px] font-semibold text-gray-900 bg-white border border-gray-200 hover:border-gray-300 hover:bg-gray-50/80">
                         Explore Our Work
                         <svg class="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
@@ -416,12 +384,12 @@
                 </div>
 
                 {{-- Stats --}}
-                <div class="hero-stats grid grid-cols-4 gap-3 pt-6 border-t border-gray-100/80">
+                <div class="hero-stats grid grid-cols-4 gap- pt-4 border-t border-gray-200/80">
                     @foreach([
-                        ['50',  '+', 'Projects',  'linear-gradient(135deg,#2563eb,#1d4ed8)'],
-                        ['30',  '+', 'Clients',   'linear-gradient(135deg,#10b981,#059669)'],
-                        ['5',   '+', 'Years',     'linear-gradient(135deg,#2563eb,#1d4ed8)'],
-                        ['99', '%', 'Uptime', 'linear-gradient(135deg,#10b981,#059669)'],
+                        ['1',  'k+', 'Projects',  'linear-gradient(135deg,#2563eb,#1d4ed8)'],
+                        ['600',  '+', 'Clients',   'linear-gradient(135deg,#10b981,#059669)'],
+                        ['4',   '+', 'Years',     'linear-gradient(135deg,#2563eb,#1d4ed8)'],
+                        ['99', '.9%', 'Uptime', 'linear-gradient(135deg,#10b981,#059669)'],
                     ] as $stat)
                     <div class="stat-card rounded-xl px-3.5 py-3">
                         <div class="text-[1.35rem] font-bold tracking-tight leading-none">
@@ -445,7 +413,7 @@
                      class="w-full h-auto relative z-10"
                      style="filter: drop-shadow(0 40px 80px rgba(0,0,0,0.15));">
 
-                {{-- Floating card — Active Projects (top left) --}}
+                {{-- Floating card — Active Projects  (top left) --}}
                 <div class="card-float glass-card absolute left-4 top-2 w-[192px] rounded-2xl p-4 border border-white/70 z-20"
                      style="background: rgba(255,255,255,0.52); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); box-shadow: 0 8px 32px rgba(0,0,0,0.11), inset 0 1px 0 rgba(255,255,255,0.85);">
                     <div class="flex items-center justify-between mb-3">
@@ -574,15 +542,15 @@
         {{-- Section header --}}
         <div class="text-center mb-16">
             <span class="inline-block text-[16px] font-semibold uppercase tracking-[0.2em] text-blue-600 mb-4">What We Do</span>
-            <h2 class="text-[2.4rem] lg:text-[3rem] font-bold text-gray-900 tracking-tight leading-[1.1] mb-5">
+            <h3 class="text-[30px] lg:text-[3rem] font-bold text-gray-900 tracking-tight leading-[1.1] mb-5">
                 We Design, Build &amp; Scale<br>Digital Products
-            </h2>
+            </h3>
             <p class="text-[18px] text-gray-600 max-w-[540px] mx-auto leading-relaxed">
                 From idea to launch, we help businesses create powerful digital solutions that grow globally.
             </p>
         </div>
 
-        {{-- Outer container card — wraps all 6 service cards --}}
+        {{-- Outer container card  wraps all 6 service cards --}}
         <div class="rounded-[28px] p-5 md:p-7"
              style="background: rgba(255,255,255,0.48);
                     backdrop-filter: blur(28px) saturate(180%);
@@ -885,7 +853,7 @@
         {{-- Header --}}
         <div class="text-center mb-20 reveal">
             <span class="inline-block text-[16px] font-semibold text-green-600 tracking-[0.08em] uppercase mb-3">Our Work</span>
-            <h2 class="text-[2.25rem] lg:text-[2.75rem] font-bold text-gray-900 tracking-[-0.03em] leading-tight mb-4">
+            <h2 class="text-[30px] lg:text-[2.75rem] font-bold text-gray-900 tracking-[-0.03em] leading-tight mb-4">
                 Some of Our Recent Work
             </h2>
             <p class="text-[18px] text-gray-600 max-w-[540px] mx-auto leading-relaxed">
@@ -1071,7 +1039,7 @@
             <div class="webdev-ring-3 absolute pointer-events-none" style="right:30px;top:50%;width:330px;height:330px;border-radius:50%;border:1px solid rgba(255,255,255,0.06);"></div>
 
 
-            <div class="grid lg:grid-cols-2 items-center" style="min-height:440px;">
+            <div class="grid items-center" style="min-height:440px;">
 
                 {{-- ── Left: copy ── --}}
                 <div class="flex flex-col justify-center p-10 lg:p-16 relative z-10">
@@ -1110,8 +1078,8 @@
                     </a>
                 </div>
 
-                {{-- ── Right: animated chat window ── --}}
-                <div class="relative flex items-center justify-center p-6 lg:p-10 z-10">
+                {{-- ── Right: animated chat window (removed) ── --}}
+                <div class="hidden">
                     <div class="w-full" style="max-width:410px;">
 
                         {{-- Chat frame --}}

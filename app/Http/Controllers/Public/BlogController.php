@@ -21,9 +21,20 @@ class BlogController extends Controller
      */
     public function index(): View
     {
-        $posts = BlogPost::published()->paginate(9);
+        $category = request('category');
 
-        return view('public.blog.index', compact('posts'));
+        $query = BlogPost::published()->with('author');
+
+        if ($category && $category !== 'All') {
+            $query->where('category', $category);
+        }
+
+        $featured   = BlogPost::published()->with('author')->first();
+        $trending   = BlogPost::published()->with('author')->take(4)->get();
+        $posts      = $query->paginate(9)->withQueryString();
+        $categories = array_merge(['All'], BlogPost::CATEGORIES);
+
+        return view('public.blog.index', compact('posts', 'featured', 'trending', 'categories', 'category'));
     }
 
     /**
